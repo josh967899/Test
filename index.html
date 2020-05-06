@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>農村地方美食小吃特色料理</title>
+        <style>
+            body{
+                margin: 0 50px ;
+                padding: 0px;
+            }
+            h2{
+            margin:20px 0;
+                text-align: center;
+            }
+            .table1{
+                width: 100%;
+                border-collapse: collapse;
+            }
+            table, th, td {
+                border: 1px solid black;
+            }
+            .table1 thead{
+                background-color: lightgrey;
+                text-align: center;
+
+            }
+            .contentBox{
+                display: flex;
+            }
+        </style>
+        <script>
+            
+            console.log("start");
+            
+            var dataUrl = "https://data.coa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx";
+            fetch(dataUrl, { mode:"cors ",
+                             method: 'GET',})
+  .then((response) => {
+    // 這裡會得到一個 ReadableStream 的物件
+    console.log(response);
+    // 可以透過 blob(), json(), text() 轉成可用的資訊
+    return response.text(); 
+  }).then((jsonData) => {
+    console.log(jsonData);
+  }).catch((err) => {
+    console.log('錯誤:', err);
+});
+  
+
+        </script>
+    </head>
+    <body>
+        <h2>農村地方美食小吃特色料理</h2>
+        <div class="contentBox">
+        <table class="table1">
+            <thead>
+                <tr>
+                    <th>編號</th>
+                    <th>行政區</th>
+                    <th>圖片</th>
+                    <th>名稱</th>
+                    <th>介紹</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        
+            <ul>
+                <li>
+                    1
+                </li>
+                <li>
+                    1
+                </li>
+            </ul>
+        
+    </div>
+    </body>
+</html>
